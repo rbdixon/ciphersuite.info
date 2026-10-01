@@ -47,7 +47,7 @@ class Command(BaseCommand):
         result['name'] = info[2]
         # info[3] = DTLS-OK
         # info[4] = Recommended
-        result['rfcs'] = re.search(r'\[(RFC\d+)\]', info[5]).groups()
+        result['rfcs'] = re.findall(r'\[(RFC\d+)\]', info[5])
 
         return result
 
